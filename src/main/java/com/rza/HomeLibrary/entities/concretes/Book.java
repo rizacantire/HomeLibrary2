@@ -1,6 +1,5 @@
 package com.rza.HomeLibrary.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,15 +17,15 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String bookName;
 
     private int page;
 
-    private String author;
+    private int authorId;
 
-    @ManyToOne()
-    @JsonBackReference
-    @JoinColumn(name="category_id")
-    private Category category;
+    private int categoryId;
 
+    private boolean isRead;
+
+    private boolean isExist;
 }
