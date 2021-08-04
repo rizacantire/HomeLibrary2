@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,9 +15,12 @@ import java.util.Date;
 @Table(name = "authors")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue//(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
     private Date birthDate;
+
+    @OneToMany
+    private List<Book> books;
 }
