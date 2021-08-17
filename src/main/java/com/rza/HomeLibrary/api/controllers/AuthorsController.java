@@ -12,6 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/authors/")
+@CrossOrigin
+
 public class AuthorsController implements ControllerInterface<Author> {
 
     private AuthorService authorService;
